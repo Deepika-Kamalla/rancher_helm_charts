@@ -42,7 +42,7 @@ restrictedAdmin: false
 #   value: "1.0"
 
 # Fully qualified name to reach your Rancher server
-hostname: rancher-dev.neustar.net
+hostname: "{{dev_hostname}}"
 
 ## Optional array of imagePullSecrets containing private registry credentials
 ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -67,7 +67,7 @@ ingress:
 
   tls:
     # options: rancher, letsEncrypt, secret
-    source: secret
+    source: "{{secret_name}}"
 
 ### LetsEncrypt config ###
 # ProTip: The production environment only allows you to register a name 5 times a week.
